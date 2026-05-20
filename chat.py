@@ -3,10 +3,8 @@ idade = 0
 altura = 0.0
 peso = 0.0
 genero = ""
-resposta = ""
 
-print("Saudações caro viajante, poderia me dizer seu nome?")
-resposta = input().lower()
+resposta = input("Saudações caro viajante, poderia me dizer seu nome?").lower()
 
 if 'nome é' in resposta:
     nome = resposta [resposta.find('nome é') + 6:].strip().capitalize()
@@ -17,14 +15,12 @@ elif 'chamo' in resposta:
     print("Seja bem-vindo, " + nome + "!")
 
 else:
-    print("Você se chama mesmo " + resposta.capitalize() + "?")
-    reposta = input().lower()
+    reposta = input("Você se chama mesmo " + resposta.capitalize() + "?").lower()
 
     if 'sim' in reposta:
         nome = resposta.capitalize()
         print ("Seja bem-vindo, " + nome + "!")
 
     else:
-        print("Poderia me dizer somente o seu nome por favor?")
-        nome = input().capitalize()
+        nome = input("Poderia me dizer somente o seu nome por favor?").capitalize()
         print ("Seja bem-vindo, " + nome + "!")
