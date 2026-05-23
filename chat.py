@@ -3,19 +3,21 @@ from string import punctuation
 nome = ""
 resposta = input("Saudações caro viajante, poderia me dizer seu nome? ").lower()
 
+def limpa_char(itemA):  #Limpa os caracteres especiais da frase
+    itemA = "".join([char for char in itemA if char not in punctuation]) 
+    itemA = itemA [0 :itemA.find(" ") + 1:].strip().capitalize()
+
 
 if 'nome é' in resposta:
     nome = resposta [resposta.find('nome é') + 6:].lstrip()            #Coloca o nome do usuário no começo do texto
-    nome = "".join([char for char in nome if char not in punctuation]) #Limpa os caracteres especiais da frase
-    nome = nome [0 :nome.find(" ") + 1:].strip().capitalize()          #Deixa somente o primeiro nome do usuário na variável
+    nome = limpa_char(nome)
     print("Seja bem-vindo, {}!".format(nome))
 
 #Os blocos a baixo tem a mesma função, mas para outras estruturas de frases
 
 elif 'chamo' in resposta:
     nome = resposta [resposta.find('chamo') + 5:].lstrip()
-    nome = "".join([char for char in nome if char not in punctuation])
-    nome = nome [0 :nome.find(" ") + 1:].strip().capitalize()
+    nome = limpa_char(nome)
     print("Seja bem-vindo, {}!".format(nome))
 
 else:
